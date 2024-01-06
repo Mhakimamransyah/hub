@@ -24,7 +24,7 @@ export default function Login() {
                 password : data?.password
             }),
             onSuccess : (result) => {
-                Cookies.set('token',result?.data?.token);
+                Cookies.set('token',result?.data?.token,{expires: 1});
                 router.replace("/");
             }
         });
