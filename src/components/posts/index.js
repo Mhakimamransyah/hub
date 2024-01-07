@@ -1,5 +1,5 @@
 import { ChatIcon, DeleteIcon, EditIcon } from "@chakra-ui/icons";
-import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, FormControl, FormLabel, Grid, GridItem, Menu, MenuButton, MenuItem, MenuList, ModalBody, ModalCloseButton, ModalFooter, ModalHeader, Spacer, Textarea, useQuery } from "@chakra-ui/react";
+import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, FormControl, Grid, GridItem, Menu, MenuButton, MenuItem, MenuList, ModalBody, ModalCloseButton, ModalFooter, ModalHeader, Spacer, Textarea } from "@chakra-ui/react";
 import moment from "moment";
 import { AiFillLike } from "react-icons/ai";
 import { IoChatboxEllipsesOutline, IoPencil, IoTrashBin } from "react-icons/io5";
@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import { useMutatation } from "@/hooks/use-mutation";
 import { useRouter } from "next/router";
 import { useRef } from "react";
+import Replies from "../list-replies";
 
 
 
@@ -126,7 +127,7 @@ export default function Posts({id, description, user, is_own_post, created_at, l
                 </ModalHeader>
                 <ModalCloseButton/>
                 <ModalBody>
-                    Replies
+                    <Replies id={id} onClose={onClose}/>
                 </ModalBody>
                 <ModalFooter>
                 </ModalFooter>

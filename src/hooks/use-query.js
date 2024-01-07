@@ -19,7 +19,10 @@ export default function UseQuery(url){
             
             return res.json();
     
-        })
+        }),
+        {
+            revalidateOnFocus: true,
+        }
     );
 
     return {...data, error, isLoading};
