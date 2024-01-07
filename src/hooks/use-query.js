@@ -22,6 +22,7 @@ export default function UseQuery(url){
         }),
         {
             revalidateOnFocus: true,
+            refreshInterval : 50000
         }
     );
 

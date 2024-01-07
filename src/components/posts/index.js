@@ -134,7 +134,26 @@ export default function Posts({id, description, user, is_own_post, created_at, l
             </div>
         );
         onOpen();
-    }
+    };
+
+    const likes = async (id, isLikePost) => {
+
+        const url = (isLikePost)?
+            `https://paace-f178cafcae7b.nevacloud.io/api/unlikes/post/${id}`:
+            `https://paace-f178cafcae7b.nevacloud.io/api/likes/post/${id}`
+
+        const response = await fetch(url, 
+            {
+                method: "POST",
+                headers : {
+                    Authorization : `Bearer ${Cookies.get("token")}`
+                }
+            }
+        )
+        
+        router.reload();
+
+    };
 
     return (
         <Card className="mb-3">
@@ -195,14 +214,14 @@ export default function Posts({id, description, user, is_own_post, created_at, l
             </CardBody>
             <CardFooter>
                 <Flex className="w-full justify-center" gap={2}>
-                    <Box className="w-full flex">
+                    <Box onClick={()=>{likes(id,is_like_post)}} className="w-full flex hover:text-blue-700 hover:cursor-pointer">
                         {
                             (is_like_post)? 
                             <AiFillLike className="mt-1" color="blue"/> : 
-                            <AiFillLike className="mt-1 hover:text-blue-700 hover:cursor-pointer"/>
+                            <AiFillLike className="mt-1 "/>
                         }
                         
-                        <span className="ml-1">
+                        <span className={`ml-1 ${(is_like_post)? "text-blue-700" : "text-black" }`}>
                             {
                                 (likes_count > 0)? `${likes_count}` : ""
                             } Likes

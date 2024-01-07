@@ -36,7 +36,7 @@ export default function Login() {
                 <title>Login to Hub</title>
                 <meta name="description" content="Login to Hub"/>
             </Head>
-            <div className="h-screen items-center justify-center flex">
+            <div className="h-screen bg-blue-100 items-center justify-center flex">
                     <div className="text-center p-3">
                         <h2 className="font-bold text-lg">Login To Hub</h2>
                         <div className="mt-3 bg-white p-3 rounded-md">

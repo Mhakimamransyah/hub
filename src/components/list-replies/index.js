@@ -9,7 +9,7 @@ import { useRef } from "react";
 
 export default function Replies({id, onClose}) {
 
-    const {isLoading, data} = UseQuery(`https://paace-f178cafcae7b.nevacloud.io/api/replies/post/${id}`);
+    const {isLoading, data} = UseQuery(`${process.env.NEXT_PUBLIC_ENDPOINT}/replies/post/${id}`);
     const replies = useRef();
     const {mutate} = useMutatation();
     const router = useRouter();
@@ -17,7 +17,7 @@ export default function Replies({id, onClose}) {
     const submitReplies = () => {  
         if(replies.current.value) {
             mutate({
-                url : `https://paace-f178cafcae7b.nevacloud.io/api/replies/post/${id}`,
+                url : `${process.env.NEXT_PUBLIC_ENDPOINT}/replies/post/${id}`,
                 method : "POST",
                 payload : JSON.stringify({
                     description : replies.current.value
@@ -37,7 +37,7 @@ export default function Replies({id, onClose}) {
 
     const deleteReplies = (idReplies) => {
         mutate({
-            url : `https://paace-f178cafcae7b.nevacloud.io/api/replies/delete/${idReplies}`,
+            url : `${process.env.NEXT_PUBLIC_ENDPOINT}/replies/delete/${idReplies}`,
             method : "DELETE",
             headers : {
                 Authorization : `Bearer ${Cookies.get("token")}`

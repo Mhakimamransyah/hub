@@ -27,12 +27,12 @@ export default function Register() {
 
     return (
         <Skeleton>
-            <div className="h-screen">
+            <div className="h-screen bg-blue-100">
                 <Head>
                     <title>Register Hub Account</title>
                     <meta name="description" content="Register new account"/>
                 </Head>
-                <div className="p-8">
+                <div className="p-8 ">
                         <div className="text-center">
                             <div className="flex">
                                 <div className="mt-1 hover:cursor-pointer hover:text-blue-600">

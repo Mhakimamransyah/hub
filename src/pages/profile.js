@@ -10,9 +10,9 @@ export default function Profile(){
 
     return(
         <Layout title={"Profiles"} description={"All about user profiles"}>
-            <div className="mt-20 h-screen">
+            <div className="h-screen border-x-4">
                 <div className="text-center justify-center">
-                    <Avatar h={100} w={100} name={data?.data?.name}/>
+                    <Avatar className="mt-20" h={100} w={100} name={data?.data?.name}/>
                     <div className="bg-blue-100 p-1 mt-2 justify-center">
                         <p className="font-bold mt-2 text-lg">{data?.data?.name}</p>
                         <p className="text-md"><EmailIcon/> {data?.data?.email}</p>
