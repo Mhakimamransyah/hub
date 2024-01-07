@@ -16,7 +16,7 @@ export default function Register() {
     const onSubmit = (data) => {
         mutate({
             method : "POST",
-            url : 'api/users',
+            url : `${process.env.NEXT_PUBLIC_ENDPOINT}/register`,
             payload : JSON.stringify({
                 name : data.name,
                 email : data.email,

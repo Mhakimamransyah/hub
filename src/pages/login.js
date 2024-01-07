@@ -18,7 +18,7 @@ export default function Login() {
         
         mutate({
             method : "POST",
-            url : "api/login",
+            url : `${process.env.NEXT_PUBLIC_ENDPOINT}/login`,
             payload : JSON.stringify({
                 email : data?.email,
                 password : data?.password
