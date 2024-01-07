@@ -99,7 +99,7 @@ export default function Login() {
                             </form>
                         </div>
                         <div className="mt-3">
-                            <p>Don't have any account ? 
+                            <p> Dont have any account ? 
                                 <Link className="text-black-200 font-bold hover:text-blue-700" href={'register'}> Register Now</Link></p>
                         </div>
                     </div>

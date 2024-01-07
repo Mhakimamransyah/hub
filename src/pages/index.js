@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <Layout title={"home"} description={"hub homepage"}>
-      <Modal children={contentModal} isOpen={isOpen} onClose={onClose}/>
+      <Modal content={contentModal} isOpen={isOpen} onClose={onClose}/>
       <div className='p-5 border-x-4'>
         <div className='mb-3 bg-white rounded-md'>
           <form>

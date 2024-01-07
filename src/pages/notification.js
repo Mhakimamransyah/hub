@@ -36,7 +36,7 @@ export default function Notification() {
                         
                         Object.keys(notifByDate).map((key, idx)=>{
                             return (
-                                <div className="mb-5">
+                                <div key={idx} className="mb-5">
                                     <div className="mb-2">
                                         <Flex gap={3}>
                                             <Box flex={3}></Box>
@@ -49,7 +49,7 @@ export default function Notification() {
                                         {
                                             notifByDate[key]?.map(item => {
                                                 return (
-                                                    <div className="mb-2">
+                                                    <div key={item.id} className="mb-2">
                                                         <Card>
                                                             <CardBody>
                                                                 <Flex gap={2}>

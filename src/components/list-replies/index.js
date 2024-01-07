@@ -68,7 +68,7 @@ export default function Replies({id, onClose}) {
                     {
                         (data).map(item => {
                             return(
-                                <Card className="mt-3 shadow-lg">
+                                <Card key={item.id} className="mt-3 shadow-lg">
                                     <CardBody>
                                         <VStack className="float-left">
                                             <Flex className="text-left" gap={3}>
