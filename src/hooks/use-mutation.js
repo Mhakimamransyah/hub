@@ -1,6 +1,10 @@
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 
 export const useMutatation = () => {
+
+    const router = useRouter();
 
     const [data, setData] = useState({
         res: null,
@@ -9,7 +13,7 @@ export const useMutatation = () => {
         error : null
     });
 
-    const mutate = useCallback(({ method, payload, url, onSuccess }) => {
+    const mutate = useCallback(({ method, payload, url, onSuccess, headers }) => {
 
         setData({
             ...data,
@@ -20,9 +24,19 @@ export const useMutatation = () => {
             method: method,
             body: payload,
             headers: {
+                ...headers,
                 'Content-type': 'application/json; charset=UTF-8'
             }
-        }).then(response => response.json()).then(result => {
+        }).then(response => {
+
+            if (response === 401) {
+                Cookies.remove("token");
+                router.replace("/login");
+            }
+
+            return response.json();
+
+        }).then(result => {
 
             if (!result.success) {
                 setData({

@@ -15,19 +15,13 @@ export default function BottomMenuNav(){
             <Box className="w-full hover:cursor-pointer hover:text-blue-300 justify-center inline-block text-center">
                 <Link href={"/"}>
                     <CiHome className="text-md w-full"/>
-                    <span className="text-sm">all post</span>
-                </Link>
-            </Box>
-            <Box className="w-full hover:cursor-pointer hover:text-blue-300 justify-center inline-block text-center">
-                <Link href={"/"}>
-                    <IoBookOutline className="text-md w-full"/>
-                    <span className="text-sm">my post</span>
+                    <span className="text-sm">dashboard</span>
                 </Link>
             </Box>
             <Box className="w-full hover:cursor-pointer hover:text-blue-300 justify-center inline-block text-center">
                 <Link href={"/profile"}>
                     <CiUser className="text-md w-full"/>
-                    <span className="text-sm">my profile</span>
+                    <span className="text-sm">profile</span>
                 </Link>
             </Box>
             <Box className="w-full hover:cursor-pointer hover:text-blue-300 justify-center inline-block text-center">
